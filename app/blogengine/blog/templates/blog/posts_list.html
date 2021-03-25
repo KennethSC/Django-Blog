@@ -5,5 +5,9 @@
 {% endblock  %}
 
 {% block content %}
-    <b>biefube</b>
+
+    {% for post in posts %}
+        {% include 'blog/includes/post_card_template.html'%}
+    {% endfor %}
+
 {% endblock  %}
