@@ -63,10 +63,6 @@ class PostCreate(LoginRequiredMixin, CreateObjectMixin, View):
     raise_exception = True
 
 
-
-
-
-
 class TagUpdate(LoginRequiredMixin, UpdateObjectMixin, View):
     model = Tag
     template = 'blog/tag_update.html' 
