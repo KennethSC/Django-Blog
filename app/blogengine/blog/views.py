@@ -5,6 +5,7 @@ from django.shortcuts import get_object_or_404
 from django.contrib.auth.mixins import LoginRequiredMixin
 from django.core.paginator import Paginator
 from django.db.models import Q
+from django.views.generic.detail import DetailView
 
 from .models import Post, Tag
 from .forms import TagForm, PostForm
@@ -19,7 +20,7 @@ def posts_list(request):
     else:
         posts = Post.objects.all()
 
-    paginator = Paginator(posts, 4)
+    paginator = Paginator(posts, 6)
     page_number = request.GET.get('page', 1)
     page = paginator.get_page(page_number)
 
@@ -50,7 +51,7 @@ class PostDetail(DetailObjectMixin, View):
 class TagDetail(DetailObjectMixin, View):
     model = Tag
     template = 'blog/tag_detail.html'
-    
+
 
 class TagCreate(LoginRequiredMixin, CreateObjectMixin, View):
     model = TagForm

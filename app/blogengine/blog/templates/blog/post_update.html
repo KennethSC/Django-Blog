@@ -22,5 +22,6 @@
         {% endfor %}
   
         <button type="submit" name="button" class="btn btn-primary">Update</button>
+        <a href="{{post.get_absolute_url}}" class="btn btn-danger"> Cancel</a>        
     </form>
 {% endblock  %}
