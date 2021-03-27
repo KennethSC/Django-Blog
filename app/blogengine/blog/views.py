@@ -5,7 +5,6 @@ from django.shortcuts import get_object_or_404
 from django.contrib.auth.mixins import LoginRequiredMixin
 from django.core.paginator import Paginator
 from django.db.models import Q
-from django.views.generic.detail import DetailView
 
 from .models import Post, Tag
 from .forms import TagForm, PostForm
